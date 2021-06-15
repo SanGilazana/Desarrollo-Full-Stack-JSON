@@ -1,0 +1,860 @@
+{
+
+    "supermercados": [
+        {
+            "id": "101",
+            "nombre": "ALDI",
+            "imagen": "data:image/png;base64,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",
+            "datos": {
+                "telefono": "900 902 466",
+                "web": "https://www.aldi.es",
+                "localizacion": {
+                    "direccion": "Av. de la Constitucion",
+                    "numero": 106,
+                    "CP": 28850,
+                    "municipio": "Torrejon de Ardoz",
+                    "provincia": "Madrid",
+                    "geolocalizacion": [
+                        "40º27'28.508 N",
+                        "3º28'0.841 O"
+                    ]
+                }
+            },
+            "secciones": [
+                {
+                    "id": "101.01",
+                    "seccion": "Perecederos",
+                    "departamentos": [
+                        {
+                            "id": "101.01.01",
+                            "nombre_dep": "Fruteria",
+                            "productos": [
+                                {
+                                    "id": "101.01.01.0001",
+                                    "nombre": "Naranja",
+                                    "descripcion": "Naranja Valenciana",
+                                    "precioVta": 1.35,
+                                    "stock": 96,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-34%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "101.01.01.0002",
+                                    "nombre": "plátano",
+                                    "descripcion": "platano de canarias",
+                                    "precioVta": 1.99,
+                                    "stock": 204,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "23-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "101.01.02",
+                            "nombre_dep": "Pescadería",
+                            "productos": [
+                                {
+                                    "id": "101.01.02.0001",
+                                    "nombre": "cabracho",
+                                    "descripcion": "cabracho Asturiano",
+                                    "precioVta": 11.95,
+                                    "stock": 24,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": false,
+                                        "descuento": "-10%",
+                                        "periodo_oferta": {
+                                            "inicio": "01-04-2021 9:00 a.m",
+                                            "fin": "06-04-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "101.01.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "dorada piscifactoria",
+                                    "precioVta": 4.99,
+                                    "stock": 200,
+                                    "medida": "kg",
+                                    "Envase": "Unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2x1",
+                                        "periodo_oferta": {
+                                            "inicio": "02-01-2018 9:00 a.m",
+                                            "fin": "12-01-2018 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "101.02",
+                    "seccion": "Alimentacion",
+                    "departamentos": [
+                        {
+                            "id": "101.02.01",
+                            "nombre_dep": "Bebidas",
+                            "productos": [
+                                {
+                                    "id": "101.02.01.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "101.02.01.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "101.02.02",
+                            "nombre_dep": "Bolleria",
+                            "productos": [
+                                {
+                                    "id": "101.02.02.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "101.02.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "101.03",
+                    "seccion": "Menaje",
+                    "departamentos": [
+                        {
+                            "id": "101.03.01",
+                            "nombre_dep": "Jardin",
+                            "productos": [
+                                {
+                                    "id": "101.03.01.0001",
+                                    "nombre": "Abono",
+                                    "descripcion": "abono natural",
+                                    "precioVta": 4.99,
+                                    "stock": 33,
+                                    "medida": "kg",
+                                    "Envase": "bolsa 5kg",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "101.03.02",
+                            "nombre_dep": "Informatica",
+                            "productos": [
+                                {
+                                    "id": "101.03.02.0001",
+                                    "nombre": "Teclado",
+                                    "descripcion": "teclado mgi",
+                                    "precioVta": 24.99,
+                                    "stock": 12,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-25%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                },
+                                {
+                                    "id": "101.03.02.0002",
+                                    "nombre": "alfombrilla raton",
+                                    "descripcion": "alfombrilla raton mgi",
+                                    "precioVta": 9.99,
+                                    "stock": 42,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "102",
+            "nombre": "Carrefour",
+            "imagen": "data:image/png;base64,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",
+            "datos": {
+                "telefono": "675 25 12 37",
+                "web": "https://www.carrefour.es",
+                "localizacion": {
+                    "direccion": "Ctra. de Loeches",
+                    "numero": null,
+                    "CP": 28850,
+                    "municipio": "Torrejon de Ardoz",
+                    "provincia": "Madrid",
+                    "geolocalizacion": [
+                        "40º27'36.839 N",
+                        "3º28'23.422 O"
+                    ]
+                }
+            },
+            "secciones": [
+                {
+                    "id": "102.01",
+                    "seccion": "Pedecederos",
+                    "departamentos": [
+                        {
+                            "id": "102.01.01",
+                            "nombre_dep": "Fruteria",
+                            "productos": [
+                                {
+                                    "id": "102.01.01.0001",
+                                    "nombre": "Naranja",
+                                    "descripcion": "Naranja Valenciana",
+                                    "precioVta": 1.55,
+                                    "stock": 43,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-24%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                },
+                                {
+                                    "id": "102.01.01.0002",
+                                    "nombre": "plátano",
+                                    "descripcion": "platano de canarias",
+                                    "precioVta": 1.99,
+                                    "stock": 204,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "02-03-2021 9:00 a.m",
+                                            "fin": "08-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "102.01.02",
+                            "nombre_dep": "Pescadería",
+                            "productos": [
+                                {
+                                    "id": "102.01.02.0001",
+                                    "nombre": "cabracho",
+                                    "descripcion": "cabracho Asturiano",
+                                    "precioVta": 11.95,
+                                    "stock": 24,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": false,
+                                        "descuento": "-10%",
+                                        "periodo_oferta": {
+                                            "inicio": "01-04-2021 9:00 a.m",
+                                            "fin": "06-04-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "102.01.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "dorada piscifactoria",
+                                    "precioVta": 4.99,
+                                    "stock": 200,
+                                    "medida": "kg",
+                                    "Envase": "Unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2x1",
+                                        "periodo_oferta": {
+                                            "inicio": "02-01-2018 9:00 a.m",
+                                            "fin": "12-01-2018 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "102.02",
+                    "seccion": "Alimentacion",
+                    "departamentos": [
+                        {
+                            "id": "102.02.01",
+                            "nombre_dep": "Bebidas",
+                            "productos": [
+                                {
+                                    "id": "102.02.01.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "102.02.01.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "102.02.02",
+                            "nombre_dep": "Bolleria",
+                            "productos": [
+                                {
+                                    "id": "102.02.02.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "102.02.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "102.03",
+                    "seccion": "Menaje",
+                    "departamentos": [
+                        {
+                            "id": "102.03.01",
+                            "nombre_dep": "Jardin",
+                            "productos": [
+                                {
+                                    "id": "102.03.01.0001",
+                                    "nombre": "Abono",
+                                    "descripcion": "abono natural",
+                                    "precioVta": 4.99,
+                                    "stock": 33,
+                                    "medida": "kg",
+                                    "Envase": "bolsa 5kg",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "102.03.02",
+                            "nombre_dep": "Informatica",
+                            "productos": [
+                                {
+                                    "id": "102.03.02.0001",
+                                    "nombre": "Teclado",
+                                    "descripcion": "teclado mgi",
+                                    "precioVta": 24.99,
+                                    "stock": 12,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-25%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                },
+                                {
+                                    "id": "102.03.02.0002",
+                                    "nombre": "alfombrilla raton",
+                                    "descripcion": "alfombrilla raton mgi",
+                                    "precioVta": 9.99,
+                                    "stock": 42,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "103",
+            "nombre": "Alcampo",
+            "imagen": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABGlBMVEX////YEw3XAADUAADYDwjYAAD99PT+9/cTkTbkdXTkbWv//v/YGBT87OzXEw7iZWXfTkznhIP31dT0ycnhAAkAlDfhYV/yv74AmjgAhxnwsLDeSUfuqKcAiyXng4PrlpXdQkHbLiz10M/75+f53d3leXjsnp3hWln0yMjfVFLz+vXni4kAhAvqmZjM5dTZIh6QWCJWcCqSRhmvRCLJeG1kcy0qiTOIXCTFNSXwt7c4gzKwPBkAkyyqVDKCw5acyqa/LBXo9ewvl0juZ2zJEQDHIRDcOzlxrHl3ZidxuIVTeC5Hsm2oQhuBXyWWx6DmAABRp2VCfy41gzGwJgDGwK9zaCjnIivLVki13MIpmEXa7eBGoVljr3SielekyenPAAAIZ0lEQVR4nO2aC3cauRmGhaRhuHiGi4GxDRgwN2OM2WZrtyRu7Gw3dLO3ZLfd7dbZ/v+/UWlGl7mAnfi4de3zPifxAaTR6B19+i4CQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAki2IG97Hn9KC4lDpU4sh/4UsWPPakHpSA5tLQ1mNP6kFpZRXm2HMyU9cI9O0rdiCbyo89t4fhwOiiRf2y4bROTh57Yg/GzChkXjV8zRtf/OHFl1/+8WAY6+ZpHm2i92XIzBLOSEcq5DuF8wZ3HIey9pHulmea/GPO9j5MlEI/xzrEk2/4xUVDCqY8R9lC7ca8Wmm+8+R80NoaqVgdYaaNL/b+1BBep3jwZ0fIVpHx6SocWT8jY+BKKHy590qsXpGcXS55zvnL66uzk6ersEx6VqFcrTznjcLetVDYIW9O+pS/utjvfvX65MkqJGSHK4E8F079r1+fN/feCr1rl+wKVU7lJgwbT1Zh3XrSsXz/5m+Xe+c+Dx3NgKrNKXmyCg+tkcrAcNW9vLhu6E/k/6pKbJ6qQnepjZQOCLn5uL/3TYOr4BFbWaIV+ncozI+OgiCoj/6rc/Y+JyIfWyOdk6vTy4JZQBUkhcOJyK6hu9ubDnhuXZnUow/qh0vGaJgV0GpH5T6LXoRwY/lVbbbky+lENknLyAfzaXs2VvHo+CBCvHWD2nTWmgcZKcfztiOHH4xXUdudmXOJ6nBPR+/29771eS6JKRTTCvPzpawmOZflZF/2mjNqrxYfjkONNILNRyUaXSAK0J6c2HCcU22DXdmzwqJ3a7LYYVHJysdWY5m4kyWj0T1kx/GQ3I1rFPFfv+sKC82lYfXNCldiKraXyPcI6VNr3LIjpXLiuegOfKD1ix6crYfCA5gHQtmxfdp83WZcd6TGhsqkLh6p3UA+p2xym7aTkBXzFW8vms0X7zMCOdWJdlJhjyUWW5h4mA6lLmZDozCXNA7Kl7HePmeetSceH4ezippAwDJlLBtvFhfyVSFJs9n8vuGnh8jRvr4goXDFUrdakXiNYq6eWYVp9SnFY6swPUgpvP+IbhiI9rYrvDpNSdx7lTVRMcRik0LP3k1uCKFQRpoW5eq8x0Ygb5vCtGAx6haFORbOYUmzz1/c4BavfZUS+H1CoB6Nmp0eVzjWS8hZu3bYF1tS2rLwFINWrbfojfvaf7FRTKFPaWIdxEai9nVSoezq+7pNGPuBtRrqMG7mN9uu8F0zYaQ/WIHxZ+V4GxQa/0R96SGI12lL3xgcmccRMPOIrUJaXZQS3rbWadlgFVconPO0Ss2iSVus6EaHDmZrJ1a0bxP4Y8JKm9++bxjiCo0riyks6yDKcyl/7R5N5uNicTyv0axCJoeylUx0cUdLjCukJdnkTc37ASnrzIROpV16pq/wAFtC4gfBy58EF8bTKH6+5lbjJk9T1uVI6OMto4qI9tGpq7m/VajsaaJXhkXPTjnguJXStRqwr4MDcz3d1lZtek3pbe6U9MWCvU0Yq+CikYwDeitbhXp0ThMpxYRmPUVc4WHY68iIjwKtWe2YwijMlUmgnobPhiO11tERILHJmPK0mxFX+Y3zPUl3XyEW8zqxE40/jilUYUFmspZjuf3T7k7IyCj0TZNknlVo0ihPmzAb1WniKtGmr6uQ7YSDX78S/P0fZ4rfC81f3juxvciXWYVttYYJhb62bc5trIsrrH3qGobBNbylUTjURZ5ROPwUhXLz+nI+ztIY25lYxV//+cPLC+Na9ZgxhdoFxM/F1RREfkuXg6VvL75jDTdZqY7BpixgeW2lxvPpJ3WbldaZL2fkm8cb0i10f3tz2ZTnGGqIeVyhrJ6IOjf2zaYQLPQda17Z2l5W4a6ZdUJhwtNob6K/beCOuHs0jNkZpvPhdoVjG1NiicG7buED+dBs/tJQm4oO0hVw+UCtAzduyPP0THm4rjqBE7lOykp3N1tpIuLTsKLwzAE8nRq/Kl7LNndhHlTsKacomwMa450lZ2IRT37rFppmK9KjlELXnCGLCmY373pBiXXMqkk3MdSB/X4KRSZRKU1txJcqRIRSTzzXKlaWJlMQEX9bibhr04lEEfKvQveKnIosTj8Ap5hWaDZimHiFTCbKcjntrSambvhkhYmI78uqiZqozHk+5leTbXJ5t2FqXz+Z+PzYLXwUtto8176G+25aYT1eWoSnVvORSVXj2adQ6N9jDZNEvvVwU+Yd1mdbyJtsymknGm72C9030qWaAcNz1GT11EtNRmQWg03zE1nPzuevYWrsyIbMTkyM3yFbsRUeTe3Vj9JMRbHxwuzTSkYhKSbLUeGzd+M1sS5ixQ5KKTy+ew2ThSDTdphfZySyGtlG2W6lHE1l51fdQoG87hZ+siHRzSgkx2vmxOqElkyi7e4YqKRAZERhyuzfpTC2hrQ9oOoa6cvmdmYl+1hl4+2nGHmmalWa+cb+5LRwenNz2mx+rX614IQeOa/7cxXng9IO1Y4mtKRAZdyUtfNz9fmU5PR1UeAK9BVaIXPk13g0prBUrlGVwbNqPT614z7Tya9su/XMMuhXFf1kgSBc7+8fPl6JP9/9u626tGX+7lZns9l0Op1NXaIybrceHPR6i4OgHhWG3mIgTxKrwjOsphVJa0xKlYhWtGWOwoZSqdSK5tdpqeaYQjHSqljtt1uTjIaj2iA6rWz36um2/w350fDe3/2XIm95a7UgcIej0aecI/4fohU+rx+6xPkMhU/0NyJ6Hz7nNXzuCivqt3XPV+FE/Szy1m8jAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA38BzJkm9Q0yeB8AAAAAElFTkSuQmCC",
+            "datos": {
+                "telefono": "916 560 304",
+                "web": "https://www.alcampo.es",
+                "localizacion": {
+                    "direccion": "Ctra. de Loeches-Ajalvir C.C.Parque Corredor",
+                    "numero": "km 12.5 N206",
+                    "CP": 28851,
+                    "municipio": "Torrejon de Ardoz",
+                    "provincia": "Madrid",
+                    "geolocalizacion": [
+                        "40º28'27.054 N",
+                        "3º28'46.652 O"
+                    ]
+                }
+            },
+            "secciones": [
+                {
+                    "id": "103.01",
+                    "seccion": "Pedecederos",
+                    "departamentos": [
+                        {
+                            "id": "103.01.01",
+                            "nombre_dep": "Fruteria",
+                            "productos": [
+                                {
+                                    "id": "103.01.01.0001",
+                                    "nombre": "Naranja",
+                                    "descripcion": "Naranja Valenciana",
+                                    "precioVta": 1.35,
+                                    "stock": 96,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-34%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "103.01.01.0002",
+                                    "nombre": "plátano",
+                                    "descripcion": "platano de canarias",
+                                    "precioVta": 1.99,
+                                    "stock": 204,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "23-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "103.01.02",
+                            "nombre_dep": "Pescadería",
+                            "productos": [
+                                {
+                                    "id": "103.01.02.0001",
+                                    "nombre": "cabracho",
+                                    "descripcion": "cabracho Asturiano",
+                                    "precioVta": 11.95,
+                                    "stock": 24,
+                                    "medida": "kg",
+                                    "Envase": "granel",
+                                    "oferta": {
+                                        "activa": false,
+                                        "descuento": "-10%",
+                                        "periodo_oferta": {
+                                            "inicio": "01-04-2021 9:00 a.m",
+                                            "fin": "06-04-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "103.01.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "dorada piscifactoria",
+                                    "precioVta": 4.99,
+                                    "stock": 200,
+                                    "medida": "kg",
+                                    "Envase": "Unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2x1",
+                                        "periodo_oferta": {
+                                            "inicio": "02-01-2018 9:00 a.m",
+                                            "fin": "12-01-2018 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "103.02",
+                    "seccion": "Alimentacion",
+                    "departamentos": [
+                        {
+                            "id": "103.02.01",
+                            "nombre_dep": "Bebidas",
+                            "productos": [
+                                {
+                                    "id": "103.02.01.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "103.02.01.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "103.02.02",
+                            "nombre_dep": "Bolleria",
+                            "productos": [
+                                {
+                                    "id": "103.02.02.0001",
+                                    "nombre": "Cerveza Heineken",
+                                    "descripcion": "Cerveza rubia sin alcohol",
+                                    "precioVta": 0.62,
+                                    "stock": 1200,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": false
+                                },
+                                {
+                                    "id": "103.02.02.0002",
+                                    "nombre": "dorada",
+                                    "descripcion": "cerveza canaria",
+                                    "precioVta": 0.39,
+                                    "stock": 1980,
+                                    "medida": "litros",
+                                    "Envase": "lata 0.3l",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "2º unidad -50%",
+                                        "periodo_oferta": {
+                                            "inicio": "20-03-2021 9:00 a.m",
+                                            "fin": "25-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": true,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "103.03",
+                    "seccion": "Menaje",
+                    "departamentos": [
+                        {
+                            "id": "103.03.01",
+                            "nombre_dep": "Jardin",
+                            "productos": [
+                                {
+                                    "id": "103.03.01.0001",
+                                    "nombre": "Abono",
+                                    "descripcion": "abono natural",
+                                    "precioVta": 4.99,
+                                    "stock": 33,
+                                    "medida": "kg",
+                                    "Envase": "bolsa 5kg",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "103.03.02",
+                            "nombre_dep": "Informatica",
+                            "productos": [
+                                {
+                                    "id": "103.03.02.0001",
+                                    "nombre": "Teclado",
+                                    "descripcion": "teclado mgi",
+                                    "precioVta": 24.99,
+                                    "stock": 12,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-25%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                },
+                                {
+                                    "id": "103.03.02.0002",
+                                    "nombre": "alfombrilla raton",
+                                    "descripcion": "alfombrilla raton mgi",
+                                    "precioVta": 9.99,
+                                    "stock": 42,
+                                    "medida": "unidad",
+                                    "Envase": "caja 1 unidad",
+                                    "oferta": {
+                                        "activa": true,
+                                        "descuento": "-15%",
+                                        "periodo_oferta": {
+                                            "inicio": "25-03-2021 9:00 a.m",
+                                            "fin": "28-03-2021 22:00 p.m."
+                                        }
+                                    },
+                                    "habitual": false,
+                                    "cesta": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
